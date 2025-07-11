@@ -65,7 +65,7 @@ hideEl.addEventListener("click", () =>{
   let z = document.getElementById("email").value;
   let w = document.getElementById("contact").value;
   function valid(z) {
-    const pattern = /^[a-zA-Z0-9]+@gmail\.com/;
+    const pattern =/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return pattern.test(z);
   }
   let res=valid(z);
@@ -82,7 +82,7 @@ hideEl.addEventListener("click", () =>{
     alert("Contact must be filled");
   } else if (!w.match(/^\d{10}$/)) {
     alert("Enter only a 10-digit number for Contact");
-  } else if (res!="true"){
+  } else if (!res){
     alert("Enter a valid email")
   } else{
     alert("Form Submitted Successfully.");
